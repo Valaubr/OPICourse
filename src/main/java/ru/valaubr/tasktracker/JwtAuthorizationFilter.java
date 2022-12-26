@@ -32,11 +32,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
         UsernamePasswordAuthenticationToken authentication = getAuthentication(request);
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        try {
-            chain.doFilter(request, response);
-        } catch (IOException | ServletException e) {
-            throw new RuntimeException(e);
-        }
+        chain.doFilter(request, response);
     }
 
 

@@ -1,4 +1,4 @@
-package ru.valaubr.tasktracker.services;
+package ru.valaubr.tasktracker.services.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

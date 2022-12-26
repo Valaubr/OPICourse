@@ -14,11 +14,14 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import ru.valaubr.tasktracker.configs.AuthConstant;
+import ru.valaubr.tasktracker.configs.StringHandler;
 import ru.valaubr.tasktracker.entities.ApiUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends UsernamePasswordAuthenticationFilter {
@@ -42,7 +45,7 @@ public class JwtAuthFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         String token = JWT.create()
-                .withSubject(((ApiUser) (authResult.getPrincipal())).getEmail())
+                .withSubject(StringHandler.getToken(authResult.getPrincipal().toString()))
                 .withExpiresAt(new Date(System.currentTimeMillis() + AuthConstant.EXPIRATION_TIME))
                 .sign(Algorithm.HMAC512(AuthConstant.SECRET.getBytes()));
         response.addHeader(AuthConstant.HEADER_STRING, AuthConstant.TOKEN_PREFIX + token);

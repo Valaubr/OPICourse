@@ -30,13 +30,13 @@ public class WebSecConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authz) ->
-                        authz.requestMatchers(HttpMethod.POST, AuthConstant.SIGN_UP_URL).permitAll()
-                                .requestMatchers(HttpMethod.GET, "/").permitAll()
-                                .anyRequest().authenticated()
+                        authz.requestMatchers("/h2-console/**").permitAll()
+                                .anyRequest().permitAll()// only for debug
                 ).addFilter(new JwtAuthFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class))))
                 .addFilter(new JwtAuthorizationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class))))
-                .httpBasic().disable().formLogin().disable()
+                .httpBasic().disable().csrf().disable().cors().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.headers().frameOptions().disable();
         return http.build();
     }
 }
