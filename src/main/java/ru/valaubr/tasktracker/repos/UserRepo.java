@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.valaubr.tasktracker.entities.ApiUser;
 @Repository
-public interface UserRepo extends JpaRepository<ApiUser, String> {
+public interface UserRepo extends JpaRepository<ApiUser, Long> {
     ApiUser findByEmail(String email);
 }

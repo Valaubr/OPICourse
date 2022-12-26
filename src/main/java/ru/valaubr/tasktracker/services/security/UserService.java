@@ -1,10 +1,10 @@
-package ru.valaubr.tasktracker.services;
+package ru.valaubr.tasktracker.services.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.valaubr.tasktracker.entities.ApiUser;
-import ru.valaubr.tasktracker.model.requests.UserCreateRequest;
+import ru.valaubr.tasktracker.pojo.UserCreateRequest;
 import ru.valaubr.tasktracker.repos.UserRepo;
 
 import java.util.Optional;

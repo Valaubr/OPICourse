@@ -1,4 +1,4 @@
-package ru.valaubr.tasktracker.model.requests;
+package ru.valaubr.tasktracker.pojo;
 
 import lombok.Data;
 
