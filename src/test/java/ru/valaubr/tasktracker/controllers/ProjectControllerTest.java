@@ -33,16 +33,16 @@ class ProjectControllerTest {
         Assertions.assertEquals(201, response.getStatusCode());
     }
 
-//    @Test
-//    void createTask() {
-//        GetIdName request = new GetIdName();
-//        request.setId(1l);
-//        request.setName("Maen");
-//        Response response = RestAssured
-//                .given().auth().oauth2(token).contentType(ContentType.JSON).body(request)
-//                .when().post("http://localhost:8080/api/projects/task");
-//        Assertions.assertEquals(201, response.getStatusCode());
-//    }
+    @Test
+    void createTask() {
+        GetIdName request = new GetIdName();
+        request.setId(1l);
+        request.setName("Maen");
+        Response response = RestAssured
+                .given().auth().oauth2(token).contentType(ContentType.JSON).body(request)
+                .when().post("http://localhost:8080/api/projects/task");
+        Assertions.assertEquals(201, response.getStatusCode());
+    }
 
     @Test
     void getProjectsToUser() {
