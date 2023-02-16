@@ -1,4 +1,4 @@
-[![Tests](https://github.com/Valaubr/Task-Tracker/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/Valaubr/Task-Tracker/actions/workflows/docker-publish.yml)
+[![Tests](https://github.com/Valaubr/Task-Tracker/actions/workflows/docker-publish.yml/badge.svg?branch=main)](https://github.com/Valaubr/Task-Tracker/actions/workflows/docker-publish.yml)
 
 **Task-tracker**
 
