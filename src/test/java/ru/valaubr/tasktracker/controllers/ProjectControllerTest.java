@@ -47,20 +47,4 @@ class ProjectControllerTest {
                 .given().auth().oauth2(token).when().get("http://localhost:8080/api/projects");
         Assertions.assertFalse(response.print().isBlank());
     }
-
-    @Test
-    void addUserOnProject() {
-    }
-
-    @Test
-    void getAllTask() {
-    }
-
-    @Test
-    void changeStatus() {
-    }
-
-    @Test
-    void changeUser() {
-    }
 }
