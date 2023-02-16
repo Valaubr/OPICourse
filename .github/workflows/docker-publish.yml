@@ -21,8 +21,6 @@ jobs:
           distribution: 'corretto'
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
-      - name: Run spring boot
-        run: chmod +x ./gradlew bootRun
       - name: Setup and execute Gradle 'test' task
         uses: gradle/gradle-build-action@v2
         with:
@@ -39,8 +37,6 @@ jobs:
           distribution: 'corretto'
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
-      - name: Run spring boot
-        run: chmod +x ./gradlew bootRun
       - name: Setup and execute Gradle 'test' task
         uses: gradle/gradle-build-action@v2
         with:
@@ -57,8 +53,6 @@ jobs:
           distribution: 'corretto'
       - name: Run chmod to make gradlew executable
         run: chmod +x ./gradlew
-      - name: Run spring boot
-        run: chmod +x ./gradlew bootRun
       - name: Setup and execute Gradle 'test' task
         uses: gradle/gradle-build-action@v2
         with:
