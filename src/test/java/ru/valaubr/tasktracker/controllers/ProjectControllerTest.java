@@ -17,8 +17,6 @@ class ProjectControllerTest {
 
     @BeforeAll
     public static void createAndLogin() throws InterruptedException {
-        TaskTrackerApplication.main(new String[] {});
-        Thread.sleep(15000);
         AuthControllerTest authControllerTest = new AuthControllerTest();
         authControllerTest.createUserTest();
         token = authControllerTest.loginTest();
