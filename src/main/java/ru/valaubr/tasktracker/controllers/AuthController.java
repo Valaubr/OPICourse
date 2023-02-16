@@ -15,6 +15,6 @@ public class AuthController {
     @PostMapping("/api/signin")
     public ResponseEntity createUser(@RequestBody UserCreateRequest userCreateRequest) {
         userService.createUser(userCreateRequest);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(201).build();
     }
 }
