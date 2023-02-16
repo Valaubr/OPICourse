@@ -4,10 +4,20 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import ru.valaubr.tasktracker.TaskTrackerApplication;
 import ru.valaubr.tasktracker.pojo.UserCreateRequest;
 
+@SpringBootTest
 class AuthControllerTest {
+
+    @BeforeAll
+    public static void createAndLogin() throws InterruptedException {
+        TaskTrackerApplication.main(new String[] {});
+        Thread.sleep(15000);
+    }
 
     @Test
     void createUserTest() {

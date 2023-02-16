@@ -6,14 +6,19 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import ru.valaubr.tasktracker.TaskTrackerApplication;
 import ru.valaubr.tasktracker.pojo.CreateProjectRequest;
 import ru.valaubr.tasktracker.pojo.GetIdName;
 
+@SpringBootTest
 class ProjectControllerTest {
     private static String token;
 
     @BeforeAll
-    public static void createAndLogin() {
+    public static void createAndLogin() throws InterruptedException {
+        TaskTrackerApplication.main(new String[] {});
+        Thread.sleep(15000);
         AuthControllerTest authControllerTest = new AuthControllerTest();
         authControllerTest.createUserTest();
         token = authControllerTest.loginTest();
