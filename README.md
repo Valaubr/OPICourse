@@ -23,3 +23,11 @@ For test recomended use Insomnia or PostMan:
 ![img_1.png](src/main/resources/img_1.png)
 ![img_1.png](src/main/resources/img_1.png)
 ![img_2.png](src/main/resources/img_2.png)
+
+Task 3 report:
+Github actions настроен на пулл реквест в main и по ручому триггеру:
+Пулл реквест:
+![img.png](img.png)
+Ручной триггер:
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
