@@ -21,13 +21,13 @@ run -p 8080:8080 tracker
 For test recomended use Insomnia or PostMan:
 ![img.png](src/main/resources/img.png)
 ![img_1.png](src/main/resources/img_1.png)
-![img_1.png](src/main/resources/img_1.png)
 ![img_2.png](src/main/resources/img_2.png)
+![img_3.png](src/main/resources/img_3.png)
 
 Task 3 report:
 Github actions настроен на пулл реквест в main и по ручому триггеру:
 Пулл реквест:
-![img.png](img.png)
+![img.png](src/main/resources/img_4.png)
 Ручной триггер:
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
+![img_1.png](src/main/resources/img_5.png)
+![img_2.png](src/main/resources/img_6.png)
