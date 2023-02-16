@@ -4,11 +4,17 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import ru.valaubr.tasktracker.TaskTrackerApplication;
 import ru.valaubr.tasktracker.pojo.UserCreateRequest;
 
 class AuthControllerTest {
 
+    @BeforeAll
+    public static void runApp() {
+        TaskTrackerApplication.main(new String[] {});
+    }
     @Test
     void createUserTest() {
         UserCreateRequest userCreateRequest = new UserCreateRequest();
