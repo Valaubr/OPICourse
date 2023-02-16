@@ -28,7 +28,7 @@ public class ProjectController {
     public ResponseEntity createProject(@RequestBody CreateProjectRequest createProjectRequest) {
         String userEmail = StringHandler.getToken(String.valueOf(SecurityContextHolder.getContext().getAuthentication()));
         projectService.createProject(userEmail, createProjectRequest.getName());
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(201).build();
     }
 
     @PutMapping("/api/projects")
@@ -44,9 +44,9 @@ public class ProjectController {
     }
 
     @PostMapping("/api/projects/task")
-    public ResponseEntity CreateTask(@RequestBody GetIdName getIdName) {
+    public ResponseEntity createTask(@RequestBody GetIdName getIdName) {
         taskService.createTask(getIdName.getId(), getIdName.getName());
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(201).build();
     }
 
     @PutMapping("/api/projects/task")
